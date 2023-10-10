@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Status Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product Status Management</h1>
+    </header>
+    <section class="actions">
+        <a href="add.html" class="add-button">Add Product</a>
+    </section>
+    <section class="product-list">
+        <h2>Product List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </section>
+    <script>
+        // Function to fetch products and update the table
+        function fetchAndDisplayProducts() {
+            fetch('get_products.php')
+                .then(response => response.json())
+                .then(products => {
+                    const tbody = document.querySelector('.product-list tbody');
+                    tbody.innerHTML = ''; // Clear the existing rows
+    
+                    products.forEach(product => {
+                        const row = document.createElement('tr');
+                        ['name', 'type', 'price', 'quantity', 'status'].forEach(key => {
+                            const cell = document.createElement('td');
+                            cell.textContent = product[key];
+                            row.appendChild(cell);
+                        });
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        }
+    
+        // Call the function when the page loads
+        window.onload = fetchAndDisplayProducts;
+    </script>
+    
+
+</body>
+</html>

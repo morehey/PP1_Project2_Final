@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.product-form, .product-list {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.actions {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.add-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.add-button:hover {
+    background-color: #555;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #666;  /* Slightly lighter than the add-button for differentiation */
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;  /* Positioning it to the top right corner below the heading */
+    top: 60px;  /* Adjust as per your requirements */
+    right: 10%;
+}
+
+.back-button:hover {
+    background-color: #888;  /* Slightly lighter shade on hover */
+}
