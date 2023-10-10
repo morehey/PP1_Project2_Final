@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -18,20 +19,21 @@
         <form id="productForm" action="form_ok.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-            <label for="type">Type:</label>
-            <input type="text" id="type" name="type" required>
             <label for="price">Price:</label>
             <input type="number" id="price" name="price" required>
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" required>
+            <label for="type">Purchase Date:</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" required>
+            <label for="date">Expiry Date:</label>
+            <input type="date" id="expiryDate" name="expiryDate" required>
             <label for="status">Status:</label>
             <select id="status" name="status">
-                <option value="active">Active</option>
-                <option value="inactive">Inactive</option>
+                <option value="active">Valid</option>
+                <option value="inactive">Invalid</option>
             </select>
             <button type="submit">Submit</button>
         </form>
     </section>
-    
 </body>
 </html>

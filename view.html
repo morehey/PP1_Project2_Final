@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product - White Bread</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my.css">
+    <style>
+        /* Custom CSS for the buttons */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .edit-button, .delete-button {
+            width: auto;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sandwich Ingredient Status</h1>
+    </header>
+    <section class="product-list">
+        <h2>View Product - White Bread</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>white bread</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>1.00</td>
+                </tr>
+                <tr>
+                    <th>Quantity</th>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <th>Purchase Date</th>
+                    <td>2023-09-15</td>
+                </tr>
+                <tr>
+                    <th>Expiry Date</th>
+                    <td>2023-09-25</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>Invalid</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttons-container">
+            <button class="edit-button" onclick="window.location.href='edit.html'">Edit</button>
+            <button class="delete-button" onclick="showConfirmation()">Delete</button>
+        </div>
+    </section>
+
+    <script>
+        function showConfirmation() {
+            const confirmation = confirm("Are you sure you want to delete this product?");
+            if (confirmation) {
+                alert("Product has been deleted.");
+                // Redirect to index.html or perform delete action here
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>

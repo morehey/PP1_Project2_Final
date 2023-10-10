@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,7 +16,7 @@ header {
 .product-form, .product-list {
     width: 80%;
     margin: 20px auto;
-    background-color: #9f1010;
+    background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -59,21 +60,18 @@ button:hover {
 }
 
 .actions {
-    display: flex; 
-    justify-content: space-between;
     width: 80%;
     margin: 20px auto;
     text-align: center;
 }
 
 .add-button {
-    display: flex;
-    padding: 5px 10px;
+    display: inline-block;
     background-color: #333;
     color: #fff;
-    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-
+    text-decoration: none;
 }
 
 .add-button:hover {
@@ -82,18 +80,18 @@ button:hover {
 
 .back-button {
     display: inline-block;
-    background-color: #666;  
+    background-color: #666;
     color: #fff;
     padding: 5px 15px;
     border-radius: 5px;
     text-decoration: none;
-    position: absolute;  
-    top: 60px;  
+    position: absolute;
+    top: 60px;
     right: 10%;
 }
 
 .back-button:hover {
-    background-color: #888;  
+    background-color: #888;
 }
 
 .search-container {
@@ -102,13 +100,13 @@ button:hover {
 }
 
 #searchInput {
+    flex: 4;
     margin-right: 10px;
-    padding: 5px 10px;
+    padding: 5px; 
 }
 
 #searchButton {
-    flex: 2;
-    padding: 5px 10px;
+    padding: 5px; 
     background-color: #333;
     color: #fff;
     border: none;
@@ -118,4 +116,46 @@ button:hover {
 
 #searchButton:hover {
     background-color: #555;
+}
+
+
+@media (max-width: 768px) {
+    .product-form, .product-list {
+        width: 90%; 
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Style for buttons in mobile mode */
+    .add-button,
+    .back-button {
+        margin-top: 10px; 
+    }
+
+    .back-button { 
+        position: static; 
+        margin: 10px auto; 
+        align-items: center;
+    }
+    .product-list {
+        width: 60%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 164, 14, 0.1);
+    }
+
+    .buttons-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .edit-button, .delete-button {
+        margin-top: 10px; 
+        width: 80px;
+    }
 }

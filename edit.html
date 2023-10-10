@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product - White Bread</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <header>
+        <h1>Sandwich Ingredient Status</h1>
+    </header>
+    <section class="product-list">
+        <h2>Edit Product - White Bread</h2>
+        <form id="editForm" action="index.html" method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" id="name" name="name" value="white bread" required></td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td><input type="number" id="price" name="price" value="1.00" required></td>
+                    </tr>
+                    <tr>
+                        <th>Quantity</th>
+                        <td><input type="number" id="quantity" name="quantity" value="50" required></td>
+                    </tr>
+                    <tr>
+                        <th>Purchase Date</th>
+                        <td><input type="date" id="purchaseDate" name="purchaseDate" value="2023-09-15" required></td>
+                    </tr>
+                    <tr>
+                        <th>Expiry Date</th>
+                        <td><input type="date" id="expiryDate" name="expiryDate" value="2023-09-25" required></td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            <select id="status" name="status">
+                                <option value="Valid" selected>Valid</option>
+                                <option value="Invalid">Invalid</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="edit-button" onclick="showEditConfirmation()">Edit</button>
+        </form>
+    </section>
+
+    <script>
+        function showEditConfirmation() {
+            const confirmation = confirm("Would you like to edit the information?");
+            if (confirmation) {
+                alert("Edited!");
+                document.getElementById("editForm").submit();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,17 +1,22 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Status Management</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my.css">
 </head>
 <body>
     <header>
-        <h1>Product Status Management</h1>
+        <h1>Sandwich Ingredient Status</h1>
     </header>
     <section class="actions">
         <a href="add.html" class="add-button">Add Product</a>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search Ingredient">
+            <button id="searchButton">Search</button>
+        </div>
     </section>
     <section class="product-list">
         <h2>Product List</h2>
@@ -19,52 +24,56 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Type</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Purchase Date</th>
+                    <th>Expiry Date</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                
+                <tr>
+                    <td><a href="view.html">white bread</a></td>
+                    <td>1.00</td>
+                    <td>50</td>
+                    <td>2023-09-15</td>
+                    <td>2023-09-25</td>
+                    <td>Invalid</td>
+                </tr>
+                <tr>
+                    <td><a href="view.html">sliced ham</a></td>
+                    <td>2.59</td>
+                    <td>40</td>
+                    <td>2023-09-15</td>
+                    <td>2023-12-15</td>
+                    <td>Valid</td>
+                </tr>
+                <tr>
+                    <td><a href="view.html">cabage</a></td>
+                    <td>2.99</td>
+                    <td>5</td>
+                    <td>2023-10-10</td>
+                    <td>2023-10-20</td>
+                    <td>Valid</td>
+                </tr>
+                <tr>
+                    <td><a href="view.html">cheddar cheese</a></td>
+                    <td>1.49</td>
+                    <td>20</td>
+                    <td>2023-09-20</td>
+                    <td>2024-05-15</td>
+                    <td>Valid</td>
+                </tr>
+                <tr>
+                    <td><a href="view.html">oriental dressing</a></td>
+                    <td>8.99</td>
+                    <td>3</td>
+                    <td>2023-09-25</td>
+                    <td>2024-09-25</td>
+                    <td>Valid</td>
+                </tr>
             </tbody>
         </table>
     </section>
-    <script>
-        // Function to fetch products and update the table
-        function fetchAndDisplayProducts() {
-            fetch('get_products.php')
-                .then(response => response.json())
-                .then(products => {
-                    const tbody = document.querySelector('.product-list tbody');
-                    tbody.innerHTML = ''; // Clear the existing rows
-    
-                    products.forEach(product => {
-                        const row = document.createElement('tr');
-                        ['name', 'type', 'price', 'quantity', 'status'].forEach(key => {
-                            const cell = document.createElement('td');
-                            cell.textContent = product[key];
-                            row.appendChild(cell);
-                        });
-                        tbody.appendChild(row);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching products:', error);
-                });
-        }
-    
-        // Call the function when the page loads
-        window.onload = fetchAndDisplayProducts;
-    </script>
-    
-
 </body>
-</html> -->
-
-<form name="form1" action="form_ok.php" onsubmit="return validationForm()" method="post">
-    제목: <input type="text" name="subject"><br>
-    이름: <input type="text" name="writer"><br>
-    내용: <textarea name='content' cols="20" rows="5"></textarea><br>
-    <input type="submit" value="저장">
-</form>
+</html>

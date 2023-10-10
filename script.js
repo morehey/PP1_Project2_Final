@@ -1,30 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const productForm = document.getElementById('productForm');
-
-    productForm.addEventListener('submit', (e) => {
-        e.preventDefault();  // prevent the default form submission
-
-        const isConfirmed = confirm("Added. Do you want to proceed?");
-        if (isConfirmed) {
-            // AJAX submission
-            const formData = new FormData(productForm);
-
-            fetch('form_ok.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    window.location.href = 'index.html';
-                } else {
-                    alert('Error submitting product. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting form:', error);
-                alert('Error submitting product. Please try again.');
-            });
-        }
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Get a reference to the form element
+    const productForm = document.getElementById("productForm");
+  
+    // Add a submit event listener to the form
+    productForm.addEventListener("submit", function (e) {
+      // Prevent the default form submission behavior
+      e.preventDefault();
+  
+      // Show an alert message
+      alert("Product information added!");
+  
+      // You can also optionally reset the form after submission
+      productForm.reset();
     });
-});
+  });
+  
